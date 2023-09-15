@@ -124,6 +124,8 @@ const data = {
   ],
   links: [
     { source: "AMF/UPF 2", target: "CU 2" },
+    { source: "AMF/UPF 2", target: "CU 1" },
+    { source: "AMF/UPF 1", target: "CU 2" },
     { source: "AMF/UPF 1", target: "CU 1" },
     { source: "CU 2", target: "DU 1" },
     { source: "CU 2", target: "DU 2" },
