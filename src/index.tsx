@@ -204,7 +204,7 @@ function App() {
         <div className="node-info">
           <h2>Node: {selectedNode}</h2>
           <p className="status">Connected</p>
-          <p className="">Health: 100%</p>
+          <p className="">Health: Good</p>
           <p className="">Status: Active</p>
           {/* Add other node information here */}
 
