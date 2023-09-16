@@ -2,11 +2,14 @@ import * as React from "react";
 import { render } from "react-dom";
 import { Graph } from "react-d3-graph";
 import "./styles.css";
+import { useState } from "react";
 
 const boundaryX = 450;
 const boundaryY = 540;
 const boundaryWidth = 200;
 const boundaryHeight = 100;
+
+let selectedNode;
 
 const data = {
   nodes: [
@@ -175,63 +178,73 @@ const myConfig = {
 };
 
 function App() {
-  const onClickGraph = () => {
-    console.log(`Clicked the graph background`);
-  };
+  const [selectedNode, setSelectedNode] = React.useState(null);
 
   const onClickNode = (nodeId) => {
+    const updatedData = { ...data };
+
+    // Find the selected node in the data and highlight it
+    updatedData.nodes = updatedData.nodes.map((node) => {
+      if (node.id === nodeId) {
+        return { ...node, color: "lightgreen" };
+      } else {
+        return {
+          ...node,
+          color: node.color === "lightgreen" ? "lightblue" : node.color,
+        };
+      }
+    });
+    setSelectedNode(nodeId);
     console.log(`Clicked node ${nodeId}`);
   };
 
-  const onDoubleClickNode = (nodeId) => {
-    console.log(`Double clicked node ${nodeId}`);
-  };
-
-  const onRightClickNode = (event, nodeId) => {
-    console.log(`Right clicked node ${nodeId}`);
-  };
-
-  const onMouseOverNode = (nodeId) => {
-    console.log(`Mouse over node ${nodeId}`);
-  };
-
-  const onMouseOutNode = (nodeId) => {
-    console.log(`Mouse out node ${nodeId}`);
-  };
-
-  const onClickLink = (source, target) => {
-    console.log(`Clicked link between ${source} and ${target}`);
-  };
-
-  const onRightClickLink = (event, source, target) => {
-    console.log(`Right clicked link between ${source} and ${target}`);
-  };
-
-  const onMouseOverLink = (source, target) => {
-    console.log(`Mouse over in link between ${source} and ${target}`);
-  };
-
-  const onMouseOutLink = (source, target) => {
-    console.log(`Mouse out link between ${source} and ${target}`);
-  };
-
   return (
-    <div className="App">
-      <Graph
-        id="graph-id" // id is mandatory, if no id is defined rd3g will throw an error
-        data={data}
-        config={myConfig}
-        onClickNode={onClickNode}
-        onRightClickNode={onRightClickNode}
-        onClickGraph={onClickGraph}
-        onClickLink={onClickLink}
-        onRightClickLink={onRightClickLink}
-        onMouseOverNode={onMouseOverNode}
-        onMouseOutNode={onMouseOutNode}
-        onMouseOverLink={onMouseOverLink}
-        onMouseOutLink={onMouseOutLink}
-      />
-    </div>
+    <>
+      {selectedNode && (
+        <div className="node-info">
+          <h2>Node: {selectedNode}</h2>
+          <p className="status">Connected</p>
+          <p className="">Health: 100%</p>
+          <p className="">Status: Active</p>
+          {/* Add other node information here */}
+
+          <div className="filter">
+            <label className="label-primary">Search Nodes</label>
+            <br></br>
+            <select className="select-node">
+              <option>CU 1</option>
+              <option>CU 2</option>
+              <option>DU 1</option>
+              <option>DU 2</option>
+              <option>DU 3</option>
+              <option>DU 4</option>
+              <option>DU 5</option>
+              <option>DU 6</option>
+              <option>DU 7</option>
+              <option>DU 8</option>
+              <option>RU 1</option>
+              <option>RU 2</option>
+              <option>RU 3</option>
+              <option>RU 4</option>
+              <option>RU 5</option>
+              <option>RU 6</option>
+              <option>RU 7</option>
+              <option>RU 8</option>
+              <option>RU 9</option>
+              <option>RU 10</option>
+            </select>
+          </div>
+        </div>
+      )}
+      <div className="App">
+        <Graph
+          id="graph-id"
+          data={data}
+          config={myConfig}
+          onClickNode={onClickNode}
+        />
+      </div>
+    </>
   );
 }
 

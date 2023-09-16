@@ -4,8 +4,31 @@
   text-align: center;
 }
 
-* {
+.node-info {
+  padding: 3rem;
+  border-radius: 10px;
+  background-color: antiquewhite;
+  width: fit-content;
+  position: absolute;
+}
+
+p {
+  color: black !important;
+}
+
+.status {
+  color: lightgreen !important;
+}
+
+svg {
   height: 100vh !important;
   width: 100vw !important;
-  margin: auto;
+}
+
+.select-node {
+  padding: 5px;
+  border: 1px solid lightblue;
+  width: 9rem;
+  border-radius: 5px;
+  margin-top: 5px;
 }
