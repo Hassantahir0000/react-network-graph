@@ -236,6 +236,7 @@ function App() {
               <option>g NB6</option>
             </select>
           </div>
+
           <div className="filter-item">
             <label className="label-primary">Filter</label>
             <br></br>
@@ -276,6 +277,20 @@ function App() {
           <div className="filter-item">
             <button className="button primary-button">Search</button>
           </div>
+        </div>
+
+        <div>
+          <label className="label-primary">Glossary</label>
+          <br></br>
+          <ul>
+            <li>AMF : Access and Mobility Management System Function</li>
+            <li>UPF : User Plane Function</li>
+            <li>CSR : Cell Site Router</li>
+            <li>CSR : Cell Site Router</li>
+            <li>CU : Control Unit</li>
+            <li>DU : Distributed Unit</li>
+            <li>RU : Radio Unit</li>
+          </ul>
         </div>
       </div>
 
