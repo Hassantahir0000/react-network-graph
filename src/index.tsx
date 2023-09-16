@@ -200,18 +200,48 @@ function App() {
 
   return (
     <>
-      {selectedNode && (
-        <div className="node-info">
-          <h2>Node: {selectedNode}</h2>
-          <p className="status">Connected</p>
-          <p className="">Health: Good</p>
-          <p className="">Status: Active</p>
-          {/* Add other node information here */}
-
-          <div className="filter">
-            <label className="label-primary">Search Nodes</label>
+      <div className="filter">
+        <div className="filter-row">
+          <div className="filter-item">
+            <label className="label-primary">Region</label>
             <br></br>
             <select className="select-node">
+              <option>Denver Region</option>
+              <option>Dallas Region</option>
+              <option>Chicago Region</option>
+            </select>
+          </div>
+
+          <div className="filter-item">
+            <label className="label-primary">Zone</label>
+            <br></br>
+            <select className="select-node">
+              <option>Den Zone 1</option>
+              <option>Den Zone 2</option>
+              <option>Dal Zone 1</option>
+              <option>Dal Zone 2</option>
+              <option>Chicago Zone 1</option>
+              <option>Chicago Zone 2</option>
+            </select>
+          </div>
+          <div className="filter-item">
+            <label className="label-primary">G Node</label>
+            <br></br>
+            <select className="select-node">
+              <option>g NB1</option>
+              <option>g NB2</option>
+              <option>g NB3</option>
+              <option>g NB4</option>
+              <option>g NB5</option>
+              <option>g NB6</option>
+            </select>
+          </div>
+          <div className="filter-item">
+            <label className="label-primary">Filter</label>
+            <br></br>
+            <select className="select-node">
+              <option>AMF/UPF 1</option>
+              <option>AMF/UPF 2</option>
               <option>CU 1</option>
               <option>CU 2</option>
               <option>DU 1</option>
@@ -232,8 +262,30 @@ function App() {
               <option>RU 8</option>
               <option>RU 9</option>
               <option>RU 10</option>
+              <option>CSR 1</option>
+              <option>CSR 2</option>
+              <option>CSR 3</option>
+              <option>CSR 4</option>
+              <option>CSR 5</option>
+              <option>CSR 6</option>
+              <option>CSR 7</option>
+              <option>CSR 8</option>
             </select>
           </div>
+
+          <div className="filter-item">
+            <button className="button primary-button">Search</button>
+          </div>
+        </div>
+      </div>
+
+      {selectedNode && (
+        <div className="node-info">
+          <h2>Node: {selectedNode}</h2>
+          <p className="status">Connected</p>
+          <p className="">Health: Good</p>
+          <p className="">Status: Active</p>
+          {/* Add other node information here */}
         </div>
       )}
       <div className="App">

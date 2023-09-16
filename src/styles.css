@@ -32,3 +32,29 @@ svg {
   border-radius: 5px;
   margin-top: 5px;
 }
+
+.filter {
+  width: 60vw !important;
+  margin: auto;
+  background: rgb(239, 239, 239);
+  border-radius: 6px;
+  padding: 10px;
+}
+
+.filter-row {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+
+.primary-button {
+  background: rgb(0, 166, 255);
+  color: white;
+  border: transparent !important;
+  padding: 0.5rem;
+  border-radius: 8px;
+  margin-top: 20px;
+  width: 100px;
+  cursor: pointer;
+}
